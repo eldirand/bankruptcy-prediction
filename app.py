@@ -524,13 +524,7 @@ for ax in axes:
         colors='#64748b',
         labelsize=9
     )
-
-   bars = axes[0].bar(
-    ['Tidak Bangkrut','Bangkrut'],
-    [6599,220],
-    color=['#2563eb','#ef4444'],
-    width=0.55
-    )
+    bars = axes[0].bar(['Tidak Bangkrut','Bangkrut'],[6599,220],color=['#2563eb','#ef4444'],width=0.55)
 for bar in bars:
     bar.set_alpha(0.9)
     axes[0].set_title('Distribusi Kelas (Imbalanced)', color='#0f172a', fontweight='bold', pad=12, fontsize=10)
