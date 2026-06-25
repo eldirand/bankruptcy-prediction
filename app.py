@@ -54,6 +54,13 @@ section[data-testid="stSidebar"] {
     color: #ffffff !important;
     transform: translateX(3px);
 }
+[data-testid="stSidebar"] .stRadio label:has(input:checked) {
+    background: rgba(59,130,246,0.18);
+    border: 1px solid rgba(59,130,246,0.4);
+    border-left: 3px solid #3b82f6;
+    color: #fff !important;
+    font-weight: 600;
+}
 
 /* ── METRIC CARDS ── */
 [data-testid="metric-container"] {
@@ -149,7 +156,7 @@ section[data-testid="stSidebar"] {
 /* ── SECTION TITLE ── */
 .section-title {
     font-size:1.05rem; font-weight:800; color:#0f172a;
-    margin:28px 0 14px 0; padding-bottom:10px;
+    margin:{SPACE['lg']} 0 {SPACE['sm']} 0;
     border-bottom:2px solid #e2e8f0;
     display:flex; align-items:center; gap:8px;
 }
