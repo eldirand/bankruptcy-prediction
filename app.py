@@ -494,16 +494,7 @@ backdrop-filter: blur(12px);
         Distribusi Data & Perbandingan Model
     </div>""", unsafe_allow_html=True)
 
-   fig.patch.set_alpha(0)
-
-ax.set_facecolor("#ffffff")
-
-ax.grid(
-    linestyle="--",
-    alpha=0.3
-)
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
+fig, axes = plt.subplots(1, 2, figsize=(13, 4), facecolor='#ffffff')
     for ax in axes:
         ax.set_facecolor('#f8fafc')
         ax.tick_params(colors='#64748b', labelsize=9)
