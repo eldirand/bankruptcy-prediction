@@ -307,30 +307,30 @@ font-weight:700;
 margin-top:20px;
 margin-bottom:10px;
 ">
-📌 Navigation
+Navigation
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
     "",
     [
-        "📊 Dashboard Perusahaan",
-        "🔮 Prediksi Perusahaan Lain"
+        "Dashboard Perusahaan",
+        "Prediksi Perusahaan Lain"
     ],
     label_visibility="collapsed"
 )
 
-if menu == "📊 Dashboard Perusahaan":
+if menu == "Dashboard Perusahaan":
 
     page = st.radio(
         "",
         [
-            "🏠 Beranda",
-            "📈 Analisis Fitur"
+            "Beranda",
+            "Analisis Fitur"
         ],
         horizontal=True
     )
 
-    if page == "🏠 Beranda":
+    if page == "Beranda":
         page = "Beranda"
     else:
         page = "Analisis Fitur"
@@ -340,13 +340,13 @@ else:
     page = st.radio(
         "",
         [
-            "✍️ Prediksi Manual",
-            "📂 Prediksi CSV"
+            "Prediksi Manual",
+            "Prediksi CSV"
         ],
         horizontal=True
     )
 
-    if page == "✍️ Prediksi Manual":
+    if page == "Prediksi Manual":
         page = "Prediksi Manual"
     else:
         page = "Prediksi CSV"
