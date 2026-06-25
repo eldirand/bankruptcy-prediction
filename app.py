@@ -279,12 +279,15 @@ st.sidebar.metric(
 )
 
 st.sidebar.markdown("""
-<div style='padding:22px 20px 8px 20px;'>
-    <div style='font-size:0.65rem; font-weight:800; text-transform:uppercase;
-                letter-spacing:0.1em; color:#475569; margin-bottom:10px;'>
-        Navigation
-    </div>
-</div>
+<h3 style="
+color:white;
+font-size:18px;
+font-weight:700;
+margin-top:20px;
+margin-bottom:10px;
+">
+📌 Navigation
+</h3>
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
