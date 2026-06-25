@@ -563,7 +563,7 @@ elif page == "Prediksi Manual":
         inputs[' Current Ratio']                         = st.number_input("Current Ratio",                 value=1.0,  min_value=0.0, step=0.01, help="Aset Lancar / Kewajiban Lancar. Sehat jika > 1")
         inputs[' Tax rate (A)']                          = st.number_input("Tax Rate (A)",                  value=0.2,  min_value=0.0, max_value=1.0, step=0.01)
         inputs[' Cash Turnover Rate']                    = st.number_input("Cash Turnover Rate",            value=0.5,  min_value=0.0, step=0.01)
-        inputs[' Total Asset Growth Rate']               = st.number_input("Total Asset Growth Rate",       value=0.1,  step=0.01)
+        inputs[' Total Asset Growth Rate']               = st.number_input("Total Asset Growth Rate",       value=0.0,  min_value=-10.0, max_value=10.0, step=0.01)
         inputs[' Inventory Turnover Rate (times)']       = st.number_input("Inventory Turnover Rate",       value=0.5,  min_value=0.0, step=0.01)
     with col2:
         inputs[' Cash/Total Assets']                     = st.number_input("Cash / Total Assets",           value=0.1,  min_value=0.0, max_value=1.0, step=0.01)
