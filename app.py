@@ -13,8 +13,22 @@ st.set_page_config(page_title="Bankruptcy Prediction", page_icon="🏦", layout=
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-html, body, [class*="css"] { font-family: 'Inter', sans-serif; background-color: #f0f4f8; }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+html, body, [class*="css"] {
+    font-family: 'Poppins', sans-serif;
+}
+html, body, [class*="css"] {
+    background:
+        radial-gradient(circle at top right,
+        rgba(59,130,246,0.08),
+        transparent 35%),
+
+        radial-gradient(circle at bottom left,
+        rgba(139,92,246,0.08),
+        transparent 40%),
+
+        #f8fafc;
+}
 
 /* ── SIDEBAR ── */
 section[data-testid="stSidebar"] {
@@ -127,14 +141,16 @@ section[data-testid="stSidebar"] {
 }
 
 /* ── CARDS ── */
-.card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+.card{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.08);
+
+    border-radius:20px;
 }
 .card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.09); transform: translateY(-2px); }
 .card-label {
@@ -244,21 +260,15 @@ THRESHOLD = 0.7254
 
 # ── SIDEBAR ──────────────────────────────────────────────────────
 st.sidebar.markdown("""
-<div style='padding:28px 20px 22px 20px; border-bottom:1px solid rgba(255,255,255,0.1);'>
-    <div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>
-        <div style='width:36px; height:36px; background:linear-gradient(135deg,#3b82f6,#6366f1);
-                    border-radius:10px; display:flex; align-items:center; justify-content:center;
-                    font-size:1.1rem;'>🏦</div>
-        <div>
-            <div style='font-size:0.98rem; font-weight:800; color:#f1f5f9; letter-spacing:-0.01em;'>
-                Bankruptcy Prediction
-            </div>
-            <div style='font-size:0.7rem; color:#64748b; font-weight:500; margin-top:1px;'>
-                ML Dashboard &nbsp;·&nbsp; v1.0
-            </div>
-        </div>
-    </div>
-</div>
+<h3 style="
+color:white;
+font-size:18px;
+font-weight:700;
+margin-top:20px;
+margin-bottom:10px;
+">
+📌 Navigation
+</h3>
 """, unsafe_allow_html=True)
 
 st.sidebar.subheader("MODEL PERFORMANCE")
@@ -340,7 +350,33 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+.stTabs [data-baseweb="tab-list"]{
+    gap:12px;
+}
 
+.stTabs [data-baseweb="tab"]{
+
+    background:#eef2ff;
+
+    border-radius:12px;
+
+    padding:10px 20px;
+
+    font-weight:600;
+
+    color:#334155;
+}
+
+.stTabs [aria-selected="true"]{
+
+    background:
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed);
+
+    color:white !important;
+}
 # ════════════════════════════════════════════════════════════════
 # HALAMAN 1 — BERANDA
 # ════════════════════════════════════════════════════════════════
@@ -348,7 +384,14 @@ if page == "Beranda":
 
     # Hero banner
     st.markdown("""
-    <div style='background:linear-gradient(135deg,#1e3a5f 0%,#1e40af 50%,#3730a3 100%);
+    <div style='background:
+linear-gradient(
+135deg,
+rgba(30,58,138,0.95),
+rgba(37,99,235,0.95),
+rgba(124,58,237,0.95)
+);
+backdrop-filter: blur(12px);
                 border-radius:20px; padding:36px 40px; margin:20px 0 28px 0;
                 position:relative; overflow:hidden;'>
         <div style='position:absolute; top:-30px; right:-30px; width:180px; height:180px;
@@ -477,7 +520,16 @@ if page == "Beranda":
         Distribusi Data & Perbandingan Model
     </div>""", unsafe_allow_html=True)
 
-    fig, axes = plt.subplots(1, 2, figsize=(13, 4), facecolor='#ffffff')
+   fig.patch.set_alpha(0)
+
+ax.set_facecolor("#ffffff")
+
+ax.grid(
+    linestyle="--",
+    alpha=0.3
+)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
     for ax in axes:
         ax.set_facecolor('#f8fafc')
         ax.tick_params(colors='#64748b', labelsize=9)
