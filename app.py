@@ -14,11 +14,7 @@ st.set_page_config(page_title="Bankruptcy Prediction", page_icon="🏦", layout=
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-[data-testid="stSidebar"] {
-    background: linear-gradient(160deg, #1e3a5f 0%, #0f2744 60%, #0a1f3a 100%);
-    border-right: none;
-    min-width: 240px;
-}
+html, body, [class*="css"] { font-family: 'Inter', sans-serif; background-color: #f0f4f8; }
 
 /* ── SIDEBAR ── */
 [data-testid="stSidebar"] {
@@ -224,115 +220,40 @@ THRESHOLD = 0.7254
 
 
 # ── SIDEBAR ──────────────────────────────────────────────────────
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-/* FIX STREAMLIT LAYOUT */
-html, body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f0f4f8;
-}
-
-/* SIDEBAR */
-section[data-testid="stSidebar"] {
-    background: linear-gradient(160deg, #1e3a5f 0%, #0f2744 60%, #0a1f3a 100%);
-    width: 260px !important;
-}
-
-section[data-testid="stSidebar"] > div {
-    width: 260px !important;
-}
-
-[data-testid="stSidebarContent"] {
-    overflow-x: hidden !important;
-}
-
-/* MAIN CONTENT */
-.main .block-container {
-    max-width: 100% !important;
-    padding-top: 0rem !important;
-}
-
-/* WARNA TEKS SIDEBAR */
-[data-testid="stSidebar"] * {
-    color: #e2e8f0 !important;
-}
-
-[data-testid="stSidebar"] .stRadio > div {
-    gap: 6px;
-}
-
-[data-testid="stSidebar"] .stRadio label {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
-    padding: 11px 16px;
-    margin: 3px 0;
-    display: block;
-    font-size: 0.87rem;
-    font-weight: 500;
-    color: #cbd5e1 !important;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-[data-testid="stSidebar"] .stRadio label:hover {
-    background: rgba(255,255,255,0.13);
-    border-color: rgba(255,255,255,0.2);
-    color: #ffffff !important;
-    transform: translateX(3px);
-}
-</style>
-""", unsafe_allow_html=True)
-
 st.sidebar.markdown("""
-<div style='padding:18px 20px 0 20px;'>
-    <div style='font-size:0.65rem; font-weight:800; text-transform:uppercase;
-                letter-spacing:0.1em; color:#475569; margin-bottom:10px;'>
-        Model Performance
-    </div>
-
-    <div style='background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
-                border-radius:12px; overflow:hidden;'>
-
-        <div style='padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.07);
-                    display:flex; justify-content:space-between; align-items:center;'>
-            <div>
-                <div style='font-size:0.68rem; color:#64748b; font-weight:600; text-transform:uppercase;
-                            letter-spacing:0.05em;'>ROC-AUC</div>
-                <div style='font-size:1.15rem; font-weight:800; color:#60a5fa; line-height:1.2;'>0.9044</div>
+<div style='padding:28px 20px 22px 20px; border-bottom:1px solid rgba(255,255,255,0.1);'>
+    <div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>
+        <div style='width:36px; height:36px; background:linear-gradient(135deg,#3b82f6,#6366f1);
+                    border-radius:10px; display:flex; align-items:center; justify-content:center;
+                    font-size:1.1rem;'>🏦</div>
+        <div>
+            <div style='font-size:0.98rem; font-weight:800; color:#f1f5f9; letter-spacing:-0.01em;'>
+                Bankruptcy Prediction
             </div>
-            <div style='width:36px; height:36px; background:rgba(59,130,246,0.15);
-                        border-radius:8px; display:flex; align-items:center;
-                        justify-content:center; font-size:1rem;'>📈</div>
-        </div>
-
-        <div style='padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.07);
-                    display:flex; justify-content:space-between; align-items:center;'>
-            <div>
-                <div style='font-size:0.68rem; color:#64748b; font-weight:600; text-transform:uppercase;
-                            letter-spacing:0.05em;'>Threshold</div>
-                <div style='font-size:1.15rem; font-weight:800; color:#fbbf24; line-height:1.2;'>0.7254</div>
+            <div style='font-size:0.7rem; color:#64748b; font-weight:500; margin-top:1px;'>
+                ML Dashboard &nbsp;·&nbsp; v1.0
             </div>
-            <div style='width:36px; height:36px; background:rgba(251,191,36,0.15);
-                        border-radius:8px; display:flex; align-items:center;
-                        justify-content:center; font-size:1rem;'>🎚️</div>
-        </div>
-
-        <div style='padding:10px 14px; display:flex; justify-content:space-between; align-items:center;'>
-            <div>
-                <div style='font-size:0.68rem; color:#64748b; font-weight:600; text-transform:uppercase;
-                            letter-spacing:0.05em;'>F1 — Bangkrut</div>
-                <div style='font-size:1.15rem; font-weight:800; color:#f87171; line-height:1.2;'>0.42</div>
-            </div>
-            <div style='width:36px; height:36px; background:rgba(248,113,113,0.15);
-                        border-radius:8px; display:flex; align-items:center;
-                        justify-content:center; font-size:1rem;'>🎯</div>
         </div>
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+st.sidebar.subheader("MODEL PERFORMANCE")
+
+st.sidebar.metric(
+    "ROC-AUC",
+    "0.9044"
+)
+
+st.sidebar.metric(
+    "Threshold",
+    "0.7254"
+)
+
+st.sidebar.metric(
+    "F1 (Bangkrut)",
+    "0.42"
+)
 
 st.sidebar.markdown("""
 <div style='padding:22px 20px 8px 20px;'>
