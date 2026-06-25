@@ -16,16 +16,26 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 html, body, [class*="css"] { font-family: 'Poppins', sans-serif; background-color: #f0f4f8; }
 html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+.stApp {
     background:
-        radial-gradient(circle at top right,
-        rgba(59,130,246,0.08),
-        transparent 35%),
+    radial-gradient(circle at top left,
+        rgba(59,130,246,0.15),
+        transparent 30%),
 
-        radial-gradient(circle at bottom left,
-        rgba(139,92,246,0.08),
-        transparent 40%),
+    radial-gradient(circle at top right,
+        rgba(139,92,246,0.15),
+        transparent 30%),
 
-        #f8fafc;
+    radial-gradient(circle at bottom left,
+        rgba(16,185,129,0.12),
+        transparent 30%),
+
+    #f8fafc;
+
+    background-attachment: fixed;
 }
 /* ── SIDEBAR ── */
 section[data-testid="stSidebar"] {
@@ -361,7 +371,7 @@ if page == "Beranda":
 
     # Hero banner
     st.markdown("""
-    <div style='background:linear-gradient(135deg,rgba(30,58,138,0.95),rgba(37,99,235,0.95),rgba(124,58,237,0.95);
+    <div style='background:linear-gradient(135deg,#1e3a5f 0%,#1e40af 50%,#3730a3 100%);
 backdrop-filter: blur(12px););
                 border-radius:20px; padding:36px 40px; margin:20px 0 28px 0;
                 position:relative; overflow:hidden;'>
