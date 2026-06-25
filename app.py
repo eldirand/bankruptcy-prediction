@@ -25,17 +25,18 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; background-color:
 [data-testid="stSidebar"] * { color: #e2e8f0 !important; }
 [data-testid="stSidebar"] .stRadio > div { gap: 6px; }
 [data-testid="stSidebar"] .stRadio label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
-    padding: 11px 16px;
-    margin: 3px 0;
-    display: block;
-    font-size: 0.87rem;
-    font-weight: 500;
-    color: #cbd5e1 !important;
+    border-radius: 12px;
+
+    padding: 12px 14px;
+    margin: 6px 0;
+
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 [data-testid="stSidebar"] .stRadio label:hover {
     background: rgba(255,255,255,0.13);
