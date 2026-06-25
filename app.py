@@ -294,26 +294,31 @@ menu = st.sidebar.radio(
         "🔮 Prediksi Perusahaan Lain"
     ]
 )
-
 if menu == "📊 Dashboard Perusahaan":
-    page = st.sidebar.radio(
-        "",
-        [
-            "Beranda",
-            "Analisis Fitur"
-        ],
-        label_visibility="collapsed"
-    )
+
+    tab1, tab2 = st.tabs([
+        "🏠 Beranda",
+        "📈 Analisis Fitur"
+    ])
+
+    with tab1:
+        page = "Beranda"
+
+    with tab2:
+        page = "Analisis Fitur"
 
 else:
-    page = st.sidebar.radio(
-        "",
-        [
-            "Prediksi Manual",
-            "Prediksi CSV"
-        ],
-        label_visibility="collapsed"
-    )
+
+    tab1, tab2 = st.tabs([
+        "✍️ Prediksi Manual",
+        "📂 Prediksi CSV"
+    ])
+
+    with tab1:
+        page = "Prediksi Manual"
+
+    with tab2:
+        page = "Prediksi CSV"
 
 st.sidebar.markdown("""
 <div style='padding:24px 20px 20px 20px; margin-top:12px;
