@@ -307,7 +307,7 @@ if menu == "📊 Dashboard Perusahaan":
     with tab2:
         page = "Analisis Fitur"
 
-else:
+elif menu == "🔮 Prediksi Perusahaan Lain":
 
     tab1, tab2 = st.tabs([
         "✍️ Prediksi Manual",
