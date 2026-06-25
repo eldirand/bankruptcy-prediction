@@ -412,7 +412,7 @@ if page == "Beranda":
     # Inject warna berbeda tiap metric card via JS trick
     st.markdown("""
     <style>
-    div[data-testid="column"]:nth-child(1) [data-testid="metric-container"] { border-top-color:#3b82f6; }
+    div[data-testid="column"]:nth-child(1) [data-testid="metric-container"] {  background:linear-gradient(145deg,rgba(255,255,255,0.95),rgba(248,250,252,0.85));backdrop-filter:blur(10px);border-radius:18px;border:none;box-shadow: 0 10px 25px rgba(0,0,0,0.08);padding:24px; }
     div[data-testid="column"]:nth-child(2) [data-testid="metric-container"] { border-top-color:#8b5cf6; }
     div[data-testid="column"]:nth-child(3) [data-testid="metric-container"] { border-top-color:#f59e0b; }
     div[data-testid="column"]:nth-child(4) [data-testid="metric-container"] { border-top-color:#10b981; }
