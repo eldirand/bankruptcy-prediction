@@ -361,7 +361,8 @@ if page == "Beranda":
 
     # Hero banner
     st.markdown("""
-    <div style='background:linear-gradient(135deg,#1e3a5f 0%,#1e40af 50%,#3730a3 100%);
+    <div style='background:linear-gradient(135deg,rgba(30,58,138,0.95),rgba(37,99,235,0.95),rgba(124,58,237,0.95);
+backdrop-filter: blur(12px););
                 border-radius:20px; padding:36px 40px; margin:20px 0 28px 0;
                 position:relative; overflow:hidden;'>
         <div style='position:absolute; top:-30px; right:-30px; width:180px; height:180px;
