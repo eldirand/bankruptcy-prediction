@@ -494,14 +494,45 @@ backdrop-filter: blur(12px);
         Distribusi Data & Perbandingan Model
     </div>""", unsafe_allow_html=True)
 
-fig, axes = plt.subplots(1, 2, figsize=(13, 4), facecolor='#ffffff')
-    for ax in axes:
-        ax.set_facecolor('#f8fafc')
-        ax.tick_params(colors='#64748b', labelsize=9)
-        for sp in ax.spines.values(): sp.set_edgecolor('#e2e8f0')
+fig, axes = plt.subplots(
+    1, 2,
+    figsize=(13,4),
+    facecolor='none'
+)
 
-    axes[0].bar(['Tidak Bangkrut', 'Bangkrut'], [6599, 220],
-                color=['#3b82f6','#f87171'], edgecolor='none', width=0.45)
+for ax in axes:
+
+    # background chart
+    ax.set_facecolor("#ffffff")
+
+    # grid modern
+    ax.grid(
+        linestyle="--",
+        alpha=0.25,
+        color="#94a3b8"
+    )
+
+    # hapus border atas kanan
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+
+    # border kiri bawah
+    ax.spines['left'].set_color('#cbd5e1')
+    ax.spines['bottom'].set_color('#cbd5e1')
+
+    ax.tick_params(
+        colors='#64748b',
+        labelsize=9
+    )
+
+   bars = axes[0].bar(
+    ['Tidak Bangkrut','Bangkrut'],
+    [6599,220],
+    color=['#2563eb','#ef4444'],
+    width=0.55
+)
+for bar in bars:
+    bar.set_alpha(0.9)
     axes[0].set_title('Distribusi Kelas (Imbalanced)', color='#0f172a', fontweight='bold', pad=12, fontsize=10)
     axes[0].set_ylabel('Jumlah', color='#64748b', fontsize=9)
     for i, v in enumerate([6599, 220]):
@@ -510,7 +541,18 @@ fig, axes = plt.subplots(1, 2, figsize=(13, 4), facecolor='#ffffff')
     mn  = ['Logistic\nRegression', 'Random\nForest', 'Gradient\nBoosting']
     auc = [0.8368, 0.8817, 0.9044]
     clr = ['#94a3b8','#60a5fa','#1e40af']
-    bars = axes[1].bar(mn, auc, color=clr, edgecolor='none', width=0.45)
+    bars = axes[1].bar(
+    mn,
+    auc,
+    color=[
+        '#94a3b8',
+        '#60a5fa',
+        '#2563eb'
+    ],
+    width=0.55
+)
+for bar in bars:
+    bar.set_alpha(0.9)
     axes[1].set_title('Perbandingan ROC-AUC', color='#0f172a', fontweight='bold', pad=12, fontsize=10)
     axes[1].set_ylabel('ROC-AUC Score', color='#64748b', fontsize=9)
     axes[1].set_ylim(0.80, 0.93)
