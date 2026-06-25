@@ -294,30 +294,46 @@ menu = st.sidebar.radio(
         "🔮 Prediksi Perusahaan Lain"
     ]
 )
+menu = st.sidebar.radio(
+    "",
+    [
+        "📊 Dashboard Perusahaan",
+        "🔮 Prediksi Perusahaan Lain"
+    ]
+)
+
 if menu == "📊 Dashboard Perusahaan":
 
-    tab1, tab2 = st.tabs([
-        "🏠 Beranda",
-        "📈 Analisis Fitur"
-    ])
+    page = st.radio(
+        "",
+        [
+            "🏠 Beranda",
+            "📈 Analisis Fitur"
+        ],
+        horizontal=True
+    )
 
-    with tab1:
+    if page == "🏠 Beranda":
         page = "Beranda"
 
-    with tab2:
+    else:
         page = "Analisis Fitur"
 
-elif menu == "🔮 Prediksi Perusahaan Lain":
+else:
 
-    tab1, tab2 = st.tabs([
-        "✍️ Prediksi Manual",
-        "📂 Prediksi CSV"
-    ])
+    page = st.radio(
+        "",
+        [
+            "✍️ Prediksi Manual",
+            "📂 Prediksi CSV"
+        ],
+        horizontal=True
+    )
 
-    with tab1:
+    if page == "✍️ Prediksi Manual":
         page = "Prediksi Manual"
 
-    with tab2:
+    else:
         page = "Prediksi CSV"
 
 st.sidebar.markdown("""
