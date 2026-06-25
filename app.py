@@ -23,15 +23,15 @@ html, body, [class*="css"] {
     background:
     radial-gradient(circle at top left,
         rgba(59,130,246,0.15),
-        transparent 70%),
+        transparent 50%),
 
     radial-gradient(circle at top right,
         rgba(139,92,246,0.15),
-        transparent 70%),
+        transparent 50%),
 
     radial-gradient(circle at bottom left,
         rgba(16,185,129,0.12),
-        transparent 70%),
+        transparent 50%),
 
     #f8fafc;
 
