@@ -288,18 +288,12 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
-    "Menu",
-    [
-        "📊 Dashboard Perusahaan",
-        "🔮 Prediksi Perusahaan Lain"
-    ]
-)
-menu = st.sidebar.radio(
     "",
     [
         "📊 Dashboard Perusahaan",
         "🔮 Prediksi Perusahaan Lain"
-    ]
+    ],
+    label_visibility="collapsed"
 )
 
 if menu == "📊 Dashboard Perusahaan":
@@ -315,7 +309,6 @@ if menu == "📊 Dashboard Perusahaan":
 
     if page == "🏠 Beranda":
         page = "Beranda"
-
     else:
         page = "Analisis Fitur"
 
@@ -332,10 +325,9 @@ else:
 
     if page == "✍️ Prediksi Manual":
         page = "Prediksi Manual"
-
     else:
         page = "Prediksi CSV"
-
+        
 st.sidebar.markdown("""
 <div style='padding:24px 20px 20px 20px; margin-top:12px;
             border-top:1px solid rgba(255,255,255,0.08);'>
