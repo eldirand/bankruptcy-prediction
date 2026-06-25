@@ -287,7 +287,6 @@ margin-top:20px;
 margin-bottom:10px;
 ">
 📌 Navigation
-</h3>
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
