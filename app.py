@@ -530,7 +530,7 @@ for ax in axes:
     [6599,220],
     color=['#2563eb','#ef4444'],
     width=0.55
-)
+    )
 for bar in bars:
     bar.set_alpha(0.9)
     axes[0].set_title('Distribusi Kelas (Imbalanced)', color='#0f172a', fontweight='bold', pad=12, fontsize=10)
