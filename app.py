@@ -17,10 +17,20 @@ st.markdown("""
 html, body, [class*="css"] { font-family: 'Inter', sans-serif; background-color: #f0f4f8; }
 
 /* ── SIDEBAR ── */
-[data-testid="stSidebar"] {
-    background: linear-gradient(160deg, #1e3a5f 0%, #0f2744 60%, #0a1f3a 100%);
-    border-right: none;
-    min-width: 240px;
+section[data-testid="stSidebar"] {
+    background: linear-gradient(
+        160deg,
+        #1e3a5f 0%,
+        #0f2744 60%,
+        #0a1f3a 100%
+    );
+}
+[data-testid="stAppViewContainer"] {
+    width: 100%;
+}
+
+.main .block-container {
+    max-width: 100% !important;
 }
 [data-testid="stSidebar"] * { color: #e2e8f0 !important; }
 [data-testid="stSidebar"] .stRadio > div { gap: 6px; }
@@ -191,7 +201,12 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; background-color:
     box-shadow:0 0 0 3px rgba(59,130,246,0.12) !important;
 }
 [data-testid="stDataFrame"] { border-radius:12px; overflow:hidden; border:1px solid #e2e8f0; }
-.main .block-container { background:#f0f4f8; padding-top:0; }
+.main .block-container {
+    max-width: 100% !important;
+    padding-top: 0.5rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
 hr { border:none; border-top:1px solid #e2e8f0; margin:18px 0; }
 </style>
 """, unsafe_allow_html=True)
