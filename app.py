@@ -350,33 +350,7 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-.stTabs [data-baseweb="tab-list"]{
-    gap:12px;
-}
 
-.stTabs [data-baseweb="tab"]{
-
-    background:#eef2ff;
-
-    border-radius:12px;
-
-    padding:10px 20px;
-
-    font-weight:600;
-
-    color:#334155;
-}
-
-.stTabs [aria-selected="true"]{
-
-    background:
-    linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed);
-
-    color:white !important;
-}
 # ════════════════════════════════════════════════════════════════
 # HALAMAN 1 — BERANDA
 # ════════════════════════════════════════════════════════════════
