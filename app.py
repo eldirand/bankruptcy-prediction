@@ -13,9 +13,20 @@ st.set_page_config(page_title="Bankruptcy Prediction", page_icon="🏦", layout=
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-html, body, [class*="css"] { font-family: 'Inter', sans-serif; background-color: #f0f4f8; }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+html, body, [class*="css"] { font-family: 'Poppins', sans-serif; background-color: #f0f4f8; }
+html, body, [class*="css"] {
+    background:
+        radial-gradient(circle at top right,
+        rgba(59,130,246,0.08),
+        transparent 35%),
 
+        radial-gradient(circle at bottom left,
+        rgba(139,92,246,0.08),
+        transparent 40%),
+
+        #f8fafc;
+}
 /* ── SIDEBAR ── */
 section[data-testid="stSidebar"] {
     background: linear-gradient(
