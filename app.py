@@ -287,9 +287,33 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-page = st.sidebar.radio("", [
-    "Beranda", "Prediksi Manual", "Prediksi CSV", "Analisis Fitur"
-], label_visibility="collapsed")
+menu = st.sidebar.radio(
+    "Menu",
+    [
+        "📊 Dashboard Perusahaan",
+        "🔮 Prediksi Perusahaan Lain"
+    ]
+)
+
+if menu == "📊 Dashboard Perusahaan":
+    page = st.sidebar.radio(
+        "",
+        [
+            "Beranda",
+            "Analisis Fitur"
+        ],
+        label_visibility="collapsed"
+    )
+
+else:
+    page = st.sidebar.radio(
+        "",
+        [
+            "Prediksi Manual",
+            "Prediksi CSV"
+        ],
+        label_visibility="collapsed"
+    )
 
 st.sidebar.markdown("""
 <div style='padding:24px 20px 20px 20px; margin-top:12px;
