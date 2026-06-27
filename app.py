@@ -320,38 +320,31 @@ with st.sidebar:
         label_visibility="collapsed"
     )
 
-if menu == "Dashboard Perusahaan":
-
-    page = st.radio(
+with st.sidebar:
+    menu = st.radio(
         "",
         [
-            "Beranda",
-            "Analisis Fitur"
+            "Dashboard Perusahaan",
+            "Prediksi Perusahaan Lain"
         ],
-        horizontal=True
+        label_visibility="collapsed"
     )
 
-    if page == "Beranda":
-        page = "Beranda"
+    st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+
+    if menu == "Dashboard Perusahaan":
+        page = st.radio(
+            "",
+            ["Beranda", "Analisis Fitur"],
+            label_visibility="collapsed"
+        )
     else:
-        page = "Analisis Fitur"
+        page = st.radio(
+            "",
+            ["Prediksi Manual", "Prediksi CSV"],
+            label_visibility="collapsed"
+        )
 
-else:
-
-    page = st.radio(
-        "",
-        [
-            "Prediksi Manual",
-            "Prediksi CSV"
-        ],
-        horizontal=True
-    )
-
-    if page == "Prediksi Manual":
-        page = "Prediksi Manual"
-    else:
-        page = "Prediksi CSV"
-        
 st.sidebar.markdown("""
 <div style='padding:24px 20px 20px 20px; margin-top:12px;
             border-top:1px solid rgba(255,255,255,0.08);'>
