@@ -310,34 +310,38 @@ margin-bottom:10px;
 Navigation
 """, unsafe_allow_html=True)
 
-with st.sidebar:
-    menu = st.radio(
+if menu == "Dashboard Perusahaan":
+
+    page = st.radio(
         "",
         [
-            "Dashboard Perusahaan",
-            "Prediksi Perusahaan Lain"
+            "Beranda",
+            "Analisis Fitur"
         ],
-        label_visibility="collapsed",
-        key="menu_utama"
+        horizontal=True
     )
 
-    st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
-
-    if menu == "Dashboard Perusahaan":
-        page = st.radio(
-            "",
-            ["Beranda", "Analisis Fitur"],
-            label_visibility="collapsed",
-            key="menu_dashboard"
-        )
+    if page == "Beranda":
+        page = "Beranda"
     else:
-        page = st.radio(
-            "",
-            ["Prediksi Manual", "Prediksi CSV"],
-            label_visibility="collapsed",
-            key="menu_prediksi"
-        )
+        page = "Analisis Fitur"
 
+else:
+
+    page = st.radio(
+        "",
+        [
+            "Prediksi Manual",
+            "Prediksi CSV"
+        ],
+        horizontal=True
+    )
+
+    if page == "Prediksi Manual":
+        page = "Prediksi Manual"
+    else:
+        page = "Prediksi CSV"
+        
 st.sidebar.markdown("""
 <div style='padding:24px 20px 20px 20px; margin-top:12px;
             border-top:1px solid rgba(255,255,255,0.08);'>
@@ -349,8 +353,6 @@ st.sidebar.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
-
 
 # ════════════════════════════════════════════════════════════════
 # HALAMAN 1 — BERANDA
