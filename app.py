@@ -710,19 +710,6 @@ elif page == "Prediksi CSV":
     </div>
     """, unsafe_allow_html=True)
 
-    with st.expander("Lihat Contoh Format CSV"):
-
-    st.write(
-        "Berikut adalah contoh 5 baris pertama dataset."
-    )
-
-    preview = pd.read_csv("CompanyBankruptcy.csv").head()
-
-    st.dataframe(
-        preview,
-        use_container_width=True
-    )
-
     uploaded = st.file_uploader("Upload file CSV", type=["csv"])
     if uploaded:
         df_up = pd.read_csv(uploaded)
@@ -730,9 +717,6 @@ elif page == "Prediksi CSV":
         <div class='info-box'>
             File berhasil dibaca — <b>{df_up.shape[0]} baris</b> x <b>{df_up.shape[1]} kolom</b>
         </div>""", unsafe_allow_html=True)
-
-        with st.expander("Preview data (5 baris pertama)"):
-            st.dataframe(df_up.head(), use_container_width=True)
 
         for f in feature_names:
             if f not in df_up.columns:
