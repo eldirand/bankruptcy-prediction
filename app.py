@@ -83,6 +83,23 @@ section[data-testid="stSidebar"] {
     font-weight: 600;
 }
 
+/* Center metric cards */
+[data-testid="metric-container"] {
+    text-align: center !important;
+}
+[data-testid="metric-container"] label {
+    text-align: center !important;
+    width: 100% !important;
+}
+[data-testid="stMetricValue"] {
+    text-align: center !important;
+    width: 100% !important;
+}
+[data-testid="stMetricDelta"] {
+    justify-content: center !important;
+    width: 100% !important;
+}
+
 /* ── METRIC CARDS ── */
 [data-testid="metric-container"] {
     background: #ffffff;
