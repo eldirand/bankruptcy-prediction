@@ -710,6 +710,20 @@ elif page == "Prediksi CSV":
     </div>
     """, unsafe_allow_html=True)
 
+    with st.expander("📋 Lihat Contoh Format CSV"):
+
+        st.write(
+            "Pastikan nama kolom pada file CSV sama seperti dataset asli. "
+            "Berikut adalah contoh 5 baris pertama dataset."
+        )
+    
+        preview = pd.read_csv("CompanyBankruptcy.csv").head()
+    
+        st.dataframe(
+            preview,
+            use_container_width=True
+        )
+
     uploaded = st.file_uploader("Upload file CSV", type=["csv"])
     if uploaded:
         df_up = pd.read_csv(uploaded)
