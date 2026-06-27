@@ -311,6 +311,7 @@ Navigation
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
+    "Menu",
     [
         "Dashboard Perusahaan",
         "Prediksi Perusahaan Lain"
