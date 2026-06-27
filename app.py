@@ -312,7 +312,6 @@ Navigation
 
 with st.sidebar:
     menu = st.radio(
-        "Navigation",
         [
             "Dashboard Perusahaan",
             "Prediksi Perusahaan Lain"
