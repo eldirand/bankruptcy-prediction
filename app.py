@@ -54,10 +54,6 @@ section[data-testid="stSidebar"] {
     max-width: 100% !important;
 }
 [data-testid="stSidebar"] * { color: #e2e8f0 !important; }
-/* Hilangkan label radio kosong */
-[data-testid="stSidebar"] .stRadio > label {
-    display: none !important;
-}
 [data-testid="stSidebar"] .stRadio > div { gap: 6px; }
 [data-testid="stSidebar"] .stRadio label {
     display: flex !important;
@@ -315,7 +311,6 @@ Navigation
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
-    "",
     [
         "Dashboard Perusahaan",
         "Prediksi Perusahaan Lain"
