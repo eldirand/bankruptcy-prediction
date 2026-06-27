@@ -317,17 +317,8 @@ with st.sidebar:
             "Dashboard Perusahaan",
             "Prediksi Perusahaan Lain"
         ],
-        label_visibility="collapsed"
-    )
-
-with st.sidebar:
-    menu = st.radio(
-        "",
-        [
-            "Dashboard Perusahaan",
-            "Prediksi Perusahaan Lain"
-        ],
-        label_visibility="collapsed"
+        label_visibility="collapsed",
+        key="menu_utama"
     )
 
     st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
@@ -336,13 +327,15 @@ with st.sidebar:
         page = st.radio(
             "",
             ["Beranda", "Analisis Fitur"],
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key="menu_dashboard"
         )
     else:
         page = st.radio(
             "",
             ["Prediksi Manual", "Prediksi CSV"],
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key="menu_prediksi"
         )
 
 st.sidebar.markdown("""
@@ -356,6 +349,7 @@ st.sidebar.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 # ════════════════════════════════════════════════════════════════
