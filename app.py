@@ -310,6 +310,16 @@ margin-bottom:10px;
 Navigation
 """, unsafe_allow_html=True)
 
+with st.sidebar:
+    menu = st.radio(
+        "",
+        [
+            "Dashboard Perusahaan",
+            "Prediksi Perusahaan Lain"
+        ],
+        label_visibility="collapsed"
+    )
+
 if menu == "Dashboard Perusahaan":
 
     page = st.radio(
